@@ -103,7 +103,7 @@ def _new_fragment_content(config: Config) -> str:
     return jinja2.Template(
         textwrap.dedent(config.new_fragment_template),
         keep_trailing_newline=True,
-    ).render(config=config)
+    ).render(config=config, date=datetime.datetime.now())
 
 
 def _files_to_combine(config: Config) -> list[Path]:
