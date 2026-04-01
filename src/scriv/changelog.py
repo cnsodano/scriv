@@ -102,7 +102,7 @@ class Changelog:
 
     def add_entry(self, header: str, text: str) -> None:
         """Add a new entry to the top of the changelog."""
-        self.changelog = header + text + self.changelog
+        self.changelog = "\n---\n" + header + text + "\n---\n" + self.changelog
 
     def write(self) -> None:
         """Write the changelog."""
